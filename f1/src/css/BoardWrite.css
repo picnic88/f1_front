@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 80px;
+}
+
+.titleBox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.titleText {
+    /* background-color: aliceblue; */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.titleInput {
+    width: 600px;
+    height: 35px;
+}
+
+
+.contentBox {
+    display: flex;
+    margin-top: 5px;
+}
+
+.contentText {
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: -1px;
+}
+
+.contentInput {
+    width: 600px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+
+}
+
+.submitBtn {
+    margin-top: 20px;
+}

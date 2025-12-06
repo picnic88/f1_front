@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 세로 가운데 */
+    align-items: center;
+    /* 가로 가운데 */
+    /* min-height: 80vh; */
+    /* 화면 대부분 가운데 오도록 */
+}
+
+.hr {
+    width: 800px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.text1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.text2 {
+    margin-top: 30px;
+    margin-right: 700px;
+}
+
+.text3 {
+    margin-right: 715px;
+}

@@ -1,0 +1,84 @@
+.col-lg-5 {
+    margin-left: 50px;
+    /* background-color: antiquewhite; */
+    display: flex;
+}
+
+body {
+    /* background-color: white; */
+}
+
+/* 음악 카드 */
+
+.playlistText {
+    margin-left: 110px;
+    margin-top: 100px;
+
+    /* background-color: #be8080; */
+}
+
+.playlist {
+    background-color: hsl(0, 0%, 85%);
+    margin-top: 10px;
+    margin-left: 110px;
+    width: 510px;
+    height: 530px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 380px;
+    height: 25px;
+    padding: 5;
+    margin: 0;
+}
+
+.searchBtn {
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    margin-left: 400px;
+}
+
+.recommend {
+    /* background-color: aliceblue; */
+    width: 475px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* 추천 음악 리스트 */
+.a {
+    background-color: antiquewhite;
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+iframe {
+    width: 475px;
+    height: 400px;
+}
+
+
+
+/* 멤버 이미지 */
+img {
+    width: 400px;
+    height: 600px;
+    margin-top: 250px;
+    margin-left: 150px;
+    margin-bottom: 60px;
+}
