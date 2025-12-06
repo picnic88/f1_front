@@ -1,20 +1,34 @@
+import React from 'react';
 import './css/H.css';
 import './css/index.css';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import NoticeBoard from './NoticeBoard';
+import Announcement from './Announcement';
 
 export default function Head() { // <-- 함수 시작
 
-    // 예: const router = useRouter(); 
+    const [open, setOpen] = React.useState(false);
 
 
     return (
         <div>
             <div className="navbar">
                 <p className="n1">새싹</p>
-                <p className="n2">메인</p>
-                <p className="n2">커뮤니티</p>
-                <p className="n2"><Link to='/Music'>뮤직 스테이션</Link></p>
+                <p className="n22">메인</p>
+                <div className='dropdown-container'
+                    onMouseEnter={() => setOpen(true)}
+                    onMouseLeave={() => setOpen(false)}
+                >
+                    <span className="n2">커뮤니티</span>
+                    {open && (
+                        <div className='dropdownMenu'>
+                            <Link to='/NoticeBoard'>공지사항</Link>
+                            <Link to='/Announcement'>게시판</Link>
+                        </div>
+                    )}
+                </div>
+                <p className="n22"><Link to='/Music'>뮤직 스테이션</Link></p>
                 <p className="n3"><Link to='/MyPage'>마이페이지</Link></p>
                 <p><Link to='/Login'>로그인</Link></p>
             </div>

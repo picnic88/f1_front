@@ -36,11 +36,12 @@ export default function Announcement({
             <div className='last'>
                 <p className='lastText'>community - announcement</p>
             </div>
-            <img src={notice} className="img" />
-            <h3 className="title"><span className='notice'>
-
-            </span>Announcement
-            </h3>
+            <div className="firstContent">
+                <img src={notice} className="img" />
+                <div className="title">
+                    Announcement
+                </div>
+            </div>
             <div className="board-container">
                 <table className="board-table">
                     <thead>
