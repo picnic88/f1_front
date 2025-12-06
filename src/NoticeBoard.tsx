@@ -1,6 +1,7 @@
 import "./css/NoticeBoard.css";
 import { useNavigate } from "react-router-dom";
 import H from "./H.tsx"
+import axios from "axios";
 
 export interface Post {
     id: number;

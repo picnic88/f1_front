@@ -1,5 +1,6 @@
 import H from "./H"
 import './css/NoticeWrite.css';
+import axios from "axios";
 
 export default function NoticeWrite() {
     return (

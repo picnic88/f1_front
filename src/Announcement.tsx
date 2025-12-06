@@ -2,6 +2,7 @@ import "./css/Announcement.css";
 import { useNavigate } from "react-router-dom";
 import H from "./H.tsx"
 import notice from './img/notice.png';
+import axios from "axios";
 
 export interface Post {
     id: number;

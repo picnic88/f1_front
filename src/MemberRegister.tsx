@@ -1,6 +1,7 @@
 import H from "./H.tsx"
 import './css/MemberRegister.css';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function MemberRegister() {
     return (

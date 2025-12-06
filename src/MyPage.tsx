@@ -1,4 +1,5 @@
 import H from './H.tsx';
+import axios from "axios";
 import './css/MyPage.css';
 
 export default function MyPage() {

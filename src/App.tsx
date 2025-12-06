@@ -6,7 +6,7 @@ import Music from "./Music.tsx";
 import { Route, Routes } from "react-router-dom";
 import BoardWrite from "./BoardWrite.tsx";
 import NoticeWrite from "./NoticeWrite.tsx";
-import Login from "./login.tsx";
+import Login from "./Login.tsx";
 import MemberRegister from "./MemberRegister.tsx";
 import Announcement from "./Announcement";
 import M from "./M";
@@ -14,6 +14,7 @@ import Management from "./Management";
 import MyBoard from "./MyBoard";
 import MyPage from "./MyPage";
 import NoticeBoard from "./NoticeBoard";
+import axios from "axios";
 
 function App() {
   /******        게시글      *******/

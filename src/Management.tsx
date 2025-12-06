@@ -1,5 +1,6 @@
 import H from './H.tsx';
 import './css/Management.css';
+import axios from "axios";
 
 export default function Management() {
     return (

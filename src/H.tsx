@@ -1,7 +1,7 @@
 import './css/H.css';
 import './css/index.css';
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 
 export default function Head() { // <-- 함수 시작
 

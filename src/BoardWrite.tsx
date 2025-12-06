@@ -1,5 +1,6 @@
 import H from "./H.tsx"
 import './css/BoardWrite.css';
+import axios from "axios";
 
 export default function BoardWrite() {
     return (
