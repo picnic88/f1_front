@@ -52,7 +52,7 @@ export default function Music({
             </div>
             <div className="col-lg-5">
                 <div className="card p-4 music-card">
-                    <h3 className="playlistText"><span className='img'>🎧</span> my playlist</h3>
+                    <div className="playlistText"><span className='img1'>🎧</span> my playlist</div>
                     <div className='playlist'>
                         <form action="/" method="get" className="d-flex mb-3">
                             <input

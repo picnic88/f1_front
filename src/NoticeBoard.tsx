@@ -35,8 +35,8 @@ export default function NoticeBoard({
             <div className='last'>
                 <p className='lastText'>community - notice board</p>
             </div>
-            <h3 className="title">Notice Board</h3>
-            <div className="board-container">
+            <div className="title1">Notice Board</div>
+            <div className="board-container1">
                 <table className="board-table">
                     <thead>
                         <tr>

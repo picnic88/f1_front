@@ -1,9 +1,13 @@
-.title {
+.title1 {
+    font-weight: bold;
+    font-size: 30px;
     margin-left: 110px;
     margin-top: 100px;
+    /* background-color: #333; */
+
 }
 
-.board-container {
+.board-container1 {
     width: 85%;
     margin: 0 auto;
     margin-top: 10px;

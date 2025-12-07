@@ -15,16 +15,17 @@
     margin-left: 110px;
 }
 
-.title {
+.title1 {
     font-weight: bold;
     width: 140px;
     padding: 0px;
     margin: 0px;
     margin-left: 10px !important;
+    margin-top: 100px;
     /* background-color: violet; */
 }
 
-.board-container {
+.board-container1 {
     width: 85%;
     margin: 0 auto;
     margin-top: 20px;

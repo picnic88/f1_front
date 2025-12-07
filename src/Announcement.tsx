@@ -38,11 +38,11 @@ export default function Announcement({
             </div>
             <div className="firstContent">
                 <img src={notice} className="img" />
-                <div className="title">
+                <div className="title1">
                     Announcement
                 </div>
             </div>
-            <div className="board-container">
+            <div className="board-container1">
                 <table className="board-table">
                     <thead>
                         <tr>
