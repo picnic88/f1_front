@@ -1,5 +1,4 @@
 import H from './H.tsx';
-import axios from "axios";
 import './css/MyPage.css';
 
 export default function MyPage() {
@@ -12,7 +11,7 @@ export default function MyPage() {
             <div className='main'>
                 <p className='text1'>마이페이지</p>
                 <p className='text2'>회원정보 수정</p>
-                <p className="hr"><hr /></p>
+                <div className="hr"><hr /></div>
                 <p className='text3'>나의 게시글</p>
             </div>
         </div>
