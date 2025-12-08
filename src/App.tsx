@@ -25,7 +25,7 @@ function App() {
 
   const [posts, setPosts] = useState<Post[]>([]);
   
-  // Spotify 추천 리스트
+  // Spotify 추천 리스트.
   const [musicRecs] = useState<MusicRec[]>([
       { title: "🦁 Maxx Power", type: "artist", id: "5xO3qTeIdumG381f7Kuqu5" }, 
       { title: "🏎️ F1 Theme", type: "playlist", id: "00L6YaFg8TlZC30ktupQGQ" },

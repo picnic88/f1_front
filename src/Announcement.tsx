@@ -13,7 +13,7 @@ export default function Announcement() {
     const postsPerPage = 6;
 
     useEffect(() => {
-        // 일반 게시글만 달라고 요청
+        // 일반 게시글만 달라고 요청.
         axios.get('http://localhost:8081/api/articles?boardType=BOARD')
             .then(res => {
                 const formattedData = res.data.map((item: any) => ({
