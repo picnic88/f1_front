@@ -1,0 +1,150 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+
+.driver-cell {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+}
+
+.driver-img {
+    display: inline-block;
+}
+
+.p-4 {
+    width: 400px;
+    height: 300px;
+    margin-right: 140px;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-5 {
+    width: 400px;
+    height: 330px;
+    margin-right: 120px;
+    /* border: 1px solid black; */
+    padding: 0;
+    padding-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top1 {
+    display: flex;
+    /* background-color: aquamarine; */
+    margin-top: 50px;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    /* background-color: aqua; */
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.name {
+    /* background-color: black; */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.team {
+    /* background-color: black; */
+}
+
+.p-41 {
+    height: 300px;
+    /* background-color: aqua; */
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+}
+
+table,
+th,
+td {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    white-space: nowrap;
+    padding: 8px 12px !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+th,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: red;
+}
+
+tr {
+    display: table-row !important;
+}
+
+.DriverBoardDriveText {
+    width: 200px;
+}
+
+.TeamBoardTeamText {
+    width: 200px;
+}
+
+
+
+/* bottom */
+.col-md-6 {
+    margin-top: -30px;
+    display: flex;
+}
+
+
+/* img */
+.i {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    /* border: 1px solid black; */
+    /* background-color: thistle; */
+    margin-top: 60px;
+    margin-right: 60px;
+}
+
+.img2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img1 {
+    width: 600px;
+    height: 360px;
+    border: 1px solid black;
+}
+
+.photoName {
+    /* background-color: gray; */
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: -40px !important;
+}

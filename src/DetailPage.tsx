@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function DetailPage() {
-    const { id } = useParams(); // URL의 /detail/:id 에서 id 가져오기
+    const { id } = useParams(); // URL의 /detail/:id 에서 id 가져오기.
 
     return (
         <div style={{ padding: "40px" }}>

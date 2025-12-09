@@ -1,7 +1,7 @@
 import H from "./H.tsx"
 import './css/NoticeWrite.css';
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NoticeWrite() {
@@ -9,18 +9,35 @@ export default function NoticeWrite() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
+    // 권한 검사 (페이지 들어오자마자 실행)
+    useEffect(() => {
+        const isLogin = localStorage.getItem("isLoggedIn");
+        const role = localStorage.getItem("role");
+
+        if (isLogin !== "true") {
+            alert("로그인이 필요합니다.");
+            navigate('/Login');
+            return;
+        }
+
+        if (role !== "ADMIN") { // 관리자가 아니면 쫓아냄
+            alert("관리자만 작성할 수 있습니다!");
+            navigate('/NoticeBoard');
+        }
+    }, [navigate]);
+
     const handleSubmit = () => {
-        // 백엔드로 보낼 데이터
         const data = {
             title: title,
             content: content,
-            boardType: "NOTICE" //공지사항 꼬리표
+            boardType: "NOTICE",
+            author: localStorage.getItem("loginId") // 저장된 아이디 전송
         };
 
         axios.post('http://localhost:8081/api/articles', data)
         .then(() => {
             alert("공지 등록 완료!");
-            navigate('/NoticeBoard'); // 목록으로 이동
+            navigate('/NoticeBoard');
         })
         .catch(err => {
             console.error(err);
@@ -31,9 +48,9 @@ export default function NoticeWrite() {
     return (
         <div>
             <H />
-            <div className='last'><p className='lastText'>Write Notice</p></div>
+            <p className='lastText'>community - notice Write</p>
             <div className='main'>
-                <p className='text1'>공지 작성</p>
+                <p className='text1'>공지 작성 </p>
                 <div className='titleBox'>
                     <p className='titleText'>제목</p>
                     <input className='titleInput' type="text" onChange={(e)=>setTitle(e.target.value)}/>

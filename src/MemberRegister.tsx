@@ -11,7 +11,7 @@ export default function MemberRegister() {
     const [nickname, setNickname] = useState("");
 
     const handleRegister = () => {
-        // JSON 객체
+        // JSON 객체.
         const jsonData = {
             loginId: loginId,
             password: password,

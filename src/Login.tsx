@@ -18,16 +18,14 @@ export default function Login({ setIsLoggedIn }: LoginProps) {
             headers: { 'Content-Type': 'application/json' }
         })
         .then(res => {
-            //백엔드가 보낸 JSON 객체를 확인
             if (res.data.status === "ok") {
                  alert("로그인 성공!");
                  
-                 // 로그인 상태 저장
+                 //로그인 정보를 브라우저에 저장
                  localStorage.setItem("isLoggedIn", "true");
-                 
-                 //권한(Role) 저장
                  localStorage.setItem("role", res.data.role); 
                  localStorage.setItem("nickname", res.data.nickname);
+                 localStorage.setItem("loginId", loginId); //아이디 저장
 
                  setIsLoggedIn(true);
                  window.location.href = "/"; 
