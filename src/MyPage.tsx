@@ -6,8 +6,14 @@ import './css/MyPage.css';
 
 export default function MyPage() {
     const navigate = useNavigate();
+    
+    // 로컬 스토리지에서 정보 가져오기
     const role = localStorage.getItem("role");
     const loginId = localStorage.getItem("loginId");
+    
+    // 닉네임 정보를 가져옴(없으면 아이디를 대신 보여줌)
+    const [nickname, setNickname] = useState(localStorage.getItem("nickname") || loginId);
+
     const [activeTab, setActiveTab] = useState("info");
 
     return (
@@ -20,9 +26,12 @@ export default function MyPage() {
                 {/* 프로필 영역 */}
                 <div style={{ background: '#1e1e1e', padding: '30px', borderRadius: '10px', border: '1px solid #333', textAlign:'center', marginBottom:'30px' }}>
                     <div style={{ width: '80px', height: '80px', background: '#e10600', borderRadius: '50%', margin: '0 auto 15px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'30px', fontWeight:'bold' }}>
-                        {loginId ? loginId.substring(0,1).toUpperCase() : "U"}
+                        {/* 닉네임 첫 글자 보여주기 */}
+                        {nickname ? nickname.substring(0,1).toUpperCase() : "U"}
                     </div>
-                    <h2>{loginId}</h2>
+                
+                    <h2>{nickname}</h2>
+                    
                     <p style={{ color: role === 'ADMIN' ? '#ff4d4d' : '#aaa', fontWeight: 'bold' }}>
                         {role === 'ADMIN' ? "관리자" : "일반사용자"}
                     </p>
@@ -55,18 +64,68 @@ export default function MyPage() {
 
 // 내 정보 수정 컴포넌트
 function MemberInfoEdit() {
+   const loginId = localStorage.getItem("loginId");
+    
+    // 상태 관리 (입력값)
+    const [password, setPassword] = useState("");
+    const [nickname, setNickname] = useState("");
+
+    const handleUpdate = () => {
+        if (!password && !nickname) {
+            alert("변경할 내용을 입력해주세요.");
+            return;
+        }
+
+        const data = {
+            password: password,
+            nickname: nickname
+        };
+
+        // 백엔드로 PATCH 요청 전송
+        axios.patch(`http://localhost:8081/api/members/${loginId}`, data)
+            .then(() => {
+                alert("회원 정보가 수정되었습니다.");
+                
+                // 닉네임이 변경되었다면 로컬스토리지도 업데이트
+                if (nickname) {
+                    localStorage.setItem("nickname", nickname);
+                }
+                
+                // 입력창 초기화 및 새로고침
+                setPassword("");
+                setNickname("");
+                window.location.reload();
+            })
+            .catch(err => {
+                console.error(err);
+                alert("수정 실패: " + (err.response?.data?.message || "서버 오류"));
+            });
+    };
+
     return (
         <div style={{ background: '#1e1e1e', padding: '30px', borderRadius: '10px', border: '1px solid #333' }}>
             <h3 style={{ marginBottom: '20px' }}>내 정보 수정</h3>
             <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', color: '#aaa', marginBottom: '5px' }}>비밀번호 변경</label>
-                <input type="password" placeholder="변경할 비밀번호 입력" style={inputStyle} />
+                <input 
+                    type="password" 
+                    placeholder="변경할 비밀번호 입력" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    style={inputStyle} 
+                />
             </div>
             <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', color: '#aaa', marginBottom: '5px' }}>닉네임 변경</label>
-                <input type="text" placeholder="새로운 닉네임" style={inputStyle} />
+                <input 
+                    type="text" 
+                    placeholder="새로운 닉네임" 
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
+                    style={inputStyle} 
+                />
             </div>
-            <button onClick={() => alert("정보 수정 기능은 준비 중입니다.")} style={{ ...adminBtnStyle, width: '100%', background: '#333' }}>수정 완료</button>
+            <button onClick={handleUpdate} style={{ ...adminBtnStyle, width: '100%', background: '#333' }}>수정 완료</button>
         </div>
     )
 }
